@@ -1,0 +1,16 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "hide-files.files": [],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#2A3016",
+        "titleBar.activeBackground": "#3A431F",
+        "titleBar.activeForeground": "#FAFBF6"
+    }
+}
