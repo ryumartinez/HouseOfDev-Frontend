@@ -1,8 +1,8 @@
 import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
-import { useDeleteProperty } from "../hooks/property";
+import { useLocation } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
+
 import { useSession } from "../hooks/auth";
 import { useNewFavorite } from "../hooks/favorite";
 
@@ -16,18 +16,15 @@ function DetailsPage() {
   const mutation = useNewFavorite();
   return (
     <div>
-      <div className="grid grid-cols-1  sm:grid-cols-3 px-10">
-        <div className="sm:col-span-3">
-          <h1>{property.id}</h1>
-        </div>
+      <div className="grid grid-cols-1  sm:grid-cols-3 grid-rows-4 px-10 gap-8 mt-10">
         <div className="sm:col-span-3 ">
           <img src={property.imageUrl} alt="fasdf" className="h-72" />
         </div>
-        <div className=" h-32">Precio</div>
-        <div className="h-32">Superficie</div>
-        <div className="h-32">Ubicacion</div>
-        <div className="sm:col-span-2 sm:row-span-2 col-start-1 h-32">
-          <h1>Descripcion</h1>
+        <div className=" h-32 bg-red-200 text-4xl">Precio</div>
+        <div className="h-32 bg-green-200 text-4xl ">Superficie</div>
+        <div className="h-32 bg-blue-200 text-4xl ">Ubicacion</div>
+        <div className="sm:col-span-2 sm:row-span-2 col-start-1 h-32 border-2 border-solid border-blue-200">
+          <h1 className="text-4xl">Descripcion</h1>
           <p>{property.description}</p>
         </div>
 
@@ -35,6 +32,7 @@ function DetailsPage() {
           onClick={() =>
             mutation.mutate({ UserId: UserId, PropertyId: PropertyId })
           }
+          className="bg-yellow-200"
         >
           Agregar a favoritos
         </button>

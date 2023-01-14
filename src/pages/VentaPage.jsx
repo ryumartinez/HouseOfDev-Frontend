@@ -1,6 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
+
 import { usePropertyList, useSearchProperty } from "../hooks/property";
 
 import { SearchBar } from "../components/SearchBar";

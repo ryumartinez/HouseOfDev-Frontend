@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { NewProp } from "./components/NewPropForm";
 import RegisterPage from "./pages/Register";
 
@@ -17,27 +17,30 @@ import { OnBoarding } from "./pages/OnBoarding";
 import { LoginPage } from "./pages/LoginPage";
 import { UsersListPage } from "./pages/UsersListPage";
 import { UserDetails } from "./pages/UserDetails";
+import { useSession } from "./hooks/auth";
+import { InvitadoLayout } from "./components/InvitadoLayout";
 function App() {
+  const { data: session } = useSession();
   return (
     <main>
       <Routes>
-        <Route path="/" element={<OnBoarding />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-
-        <Route path="/home/*" element={<Navbar />}>
+        <Route
+          path="/"
+          element={session?.data?.id ? <Navbar /> : <OnBoarding />}
+        >
           <Route index element={<HomePage />} />
           <Route path="details/:id" element={<DetailsPage />} />
           <Route path="ventas" element={<VentaPage />} />
           <Route path="alquileres" element={<AlquilerPage />} />
           <Route path="favoritos" element={<FavoritosPage />} />
           <Route path="perfil" element={<ProfilePage />} />
-          <Route path="admin/*" element={<AdminLayout />}>
-            <Route index element={<AdminPage />} />
-            <Route path="newProp" element={<NewProp />} />
-            <Route path="users" element={<UsersListPage />} />
-            <Route path="userdetails/:id" element={<UserDetails />} />
-          </Route>
+        </Route>
+
+        <Route path="admin/*" element={<AdminLayout />}>
+          <Route index element={<AdminPage />} />
+          <Route path="newProp" element={<NewProp />} />
+          <Route path="users" element={<UsersListPage />} />
+          <Route path="userdetails/:id" element={<UserDetails />} />
         </Route>
       </Routes>
     </main>
