@@ -24,10 +24,13 @@ export const useFavorites = (UserId) =>{
     return useQuery([UserId],()=>getFavorite(UserId))
 }
 
-const deleteFavorite = (UserId,PropertyId) =>{
+const deleteFavorite = (data) =>{
     return request({
-        url:`/favorites/?UserId=${UserId}&&PropertyId=${PropertyId}`,
+        url:`/favorites/?UserId=${data.UserId}&&PropertyId=${data.PropertyId}`,
         method:"delete"
     })
+}
+export const useDeleteFavorite = () =>{
+    return useMutation({mutationFn:deleteFavorite})
 }
 

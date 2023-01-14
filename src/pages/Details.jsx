@@ -30,7 +30,7 @@ function DetailsPage() {
           <h1>Descripcion</h1>
           <p>{property.description}</p>
         </div>
-        <div>Agendar una cita</div>
+
         <button
           onClick={() =>
             mutation.mutate({ UserId: UserId, PropertyId: PropertyId })

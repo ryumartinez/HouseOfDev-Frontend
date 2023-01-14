@@ -6,13 +6,11 @@ export const Navbar = () => {
   return (
     <div className="">
       <nav className="navbar flex gap-5">
-        <Link to="/register">Registrarse</Link>
-        <Link to="/login">Iniciar Sesion</Link>
-        <Link to="/admin">Admin</Link>
-        <Link to="/alquileres">En alquiler</Link>
-        <Link to="/ventas">En venta</Link>
-        <Link to="/favoritos">Favoritos</Link>
-        <Link to="/perfil">Mi perfil</Link>
+        <Link to="/home/admin">Admin</Link>
+        <Link to="/home/alquileres">En alquiler</Link>
+        <Link to="/home/ventas">En venta</Link>
+        <Link to="/home/favoritos">Favoritos</Link>
+        <Link to="/home/perfil">Mi perfil</Link>
       </nav>
 
       <Outlet />

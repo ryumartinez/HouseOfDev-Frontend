@@ -26,9 +26,8 @@ const searchProperties = (search,precio,habitaciones) => {
 
 const deleteProperty =(data) =>{
   return request({
-    url: "/properties",
-    method:"delete",
-    data:data
+    url: `/properties/${data}`,
+    method:"delete"
   }
   )
 }
@@ -38,12 +37,7 @@ const deleteProperty =(data) =>{
 export const useDeleteProperty = () =>{
   const client = useQueryClient()
   const navigate = useNavigate()
-  return useMutation({
-    mutationFn:deleteProperty,
-    onSuccess:()=>{
-      client.invalidateQueries("properties")
-    }
-  })
+  return useMutation({mutationFn:deleteProperty})
 }
 
 export const useSearchProperty = (search,precio,habitaciones) =>{
