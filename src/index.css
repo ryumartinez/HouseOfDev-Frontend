@@ -11,7 +11,7 @@
     }
     .formLayout{
       @apply
-     bg-white min-h-full  h-72 flex flex-col justify-center items-center w-full gap-5
+     bg-white min-h-full  h-80 flex flex-col justify-center items-center w-full gap-5
      pt-7 pb-11 drop-shadow-2xl 
     }
     .input{

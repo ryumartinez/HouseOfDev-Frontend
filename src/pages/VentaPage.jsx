@@ -15,18 +15,20 @@ export const VentaPage = () => {
   const search = searchParams.get("search");
   const precio = searchParams.get("precio");
   const habitaciones = searchParams.get("habitaciones");
-  const query2 = useSearchProperty(`venta ${search}`, precio, habitaciones);
+  const query2 = useSearchProperty(search, precio, habitaciones);
 
   return (
-    <div>
-      <SearchBar />
+    <div className="">
+      <div className="grid grid-cols-2 px-10 gap-5 mt-5">
+        <div className="col-span-2 grid grid-cols-6 border-2 border-solid border-blue-700 ">
+          <h1 className="font-bold text-blue-700 text-lg ">
+            Propiedades en venta
+          </h1>
 
-      <div className="grid grid-cols-2 px-10 gap-5">
-        <div className="col-span-2">
-          <h1>Propiedades en venta</h1>
+          <div className="col-span-5 col-start-3 sm:col-start-2 border-t-2 border-solid border-blue-700 mt-8 sm:mt-4"></div>
         </div>
-        <div className="col-span-2">botones</div>
-        <div className="h-72 col-span-2 bg-[url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2f9e2f107360739.5fa521b236457.jpg)]"></div>
+        <SearchBar />
+        <div className="h-72 col-span-2 bg-[url(https://i.imgur.com/l34Vcnd.png)]"></div>
         {query2?.data?.data?.map((property) => (
           <PropertyCard data={property} />
         ))}

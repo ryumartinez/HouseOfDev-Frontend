@@ -31,7 +31,7 @@ export const useLogin = () => {
     mutationFn: loginUser,
     onSuccess: (data) => {
       saveOnLocal(data);
-      navigate("/")
+      navigate("/home")
     },
   });
 };
