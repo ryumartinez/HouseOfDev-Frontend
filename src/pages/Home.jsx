@@ -1,9 +1,5 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
 import { usePropertyList, useSearchProperty } from "../hooks/property";
-
-import { SearchBar } from "../components/SearchBar";
 import { PropertyCard } from "../components/PropertyCard";
 export const HomePage = () => {
   const query = usePropertyList();
