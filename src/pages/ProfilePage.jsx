@@ -62,6 +62,7 @@ export const ProfilePage = () => {
             >
               cerrar sesion
             </button>
+            {user.role == "admin" ? <Link to="/admin">admin</Link> : <></>}
           </div>
         </div>
       </div>
