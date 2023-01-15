@@ -17,17 +17,13 @@ import { OnBoarding } from "./pages/OnBoarding";
 import { LoginPage } from "./pages/LoginPage";
 import { UsersListPage } from "./pages/UsersListPage";
 import { UserDetails } from "./pages/UserDetails";
-import { useSession } from "./hooks/auth";
-import { InvitadoLayout } from "./components/InvitadoLayout";
+
 function App() {
-  const { data: session } = useSession();
   return (
     <main>
       <Routes>
-        <Route
-          path="/"
-          element={session?.data?.id ? <Navbar /> : <OnBoarding />}
-        >
+        <Route index element={<OnBoarding />} forceRefresh={true} />
+        <Route path="/home/*" element={<Navbar />}>
           <Route index element={<HomePage />} />
           <Route path="details/:id" element={<DetailsPage />} />
           <Route path="ventas" element={<VentaPage />} />
@@ -35,7 +31,8 @@ function App() {
           <Route path="favoritos" element={<FavoritosPage />} />
           <Route path="perfil" element={<ProfilePage />} />
         </Route>
-
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="admin/*" element={<AdminLayout />}>
           <Route index element={<AdminPage />} />
           <Route path="newProp" element={<NewProp />} />
