@@ -5,7 +5,7 @@ export const PropertyCard = ({ data }) => {
   return (
     <div className=" h-48 grid grid-cols-1 sm:grid-cols-3 ">
       <NavLink
-        to={`/details/${data.id}`}
+        to={`/home/details/${data.id}`}
         state={data}
         className="border-2 sm:border-r-0 border-solid border-blue-700"
       >

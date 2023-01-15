@@ -12,6 +12,7 @@ const loginUser = (data) => {
 
 const saveOnLocal = (data) => {
   return window.localStorage.setItem("token", JSON.stringify(data));
+  
 };
 
 const getSession = () => {
@@ -21,8 +22,8 @@ const getSession = () => {
   });
 };
 
-export const useSession = () => {
-  return useQuery("session", getSession);
+export const useSession = (data) => {
+  return useQuery("session", getSession,{enabled:data});
 };
 
 export const useLogin = () => {
@@ -32,6 +33,6 @@ export const useLogin = () => {
     onSuccess: (data) => {
       saveOnLocal(data);
       navigate("/home")
-    },
+    }
   });
 };

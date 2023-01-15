@@ -5,7 +5,7 @@ const tokenJSON = window.localStorage.getItem("token");
 
 if (tokenJSON) {
   const token = JSON.parse(tokenJSON);
-  const tokenData = token.data.accessToken;
+  const tokenData = token?.data?.accessToken;
   client.defaults.headers.common.Authorization = `Bearer ${tokenData}`;
   console.log(tokenData);
 }

@@ -9,9 +9,10 @@ function AdminLayout() {
     <>
       <div>
         <div className="flex gap-5 bg-blue-400 navbar">
-          <Link to="/home/admin/users">Usuarios</Link>
-          <Link to="/home/admin/">Propiedades</Link>
-          <Link to="/home/admin/newProp">Nueva Propiedad</Link>
+          <Link to="/admin/users">Usuarios</Link>
+          <Link to="/admin/">Propiedades</Link>
+          <Link to="/admin/newProp">Nueva Propiedad</Link>
+          <Link to="/">Home</Link>
         </div>
         <Outlet />
       </div>

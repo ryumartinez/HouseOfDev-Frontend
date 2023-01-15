@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useRegisterUser } from "../hooks/user";
 import Logo from "../icons/Logo";
+import { Link } from "react-router-dom";
 export const RegisterForm = () => {
   const mutation = useRegisterUser();
   const { register, handleSubmit } = useForm();
@@ -10,7 +11,7 @@ export const RegisterForm = () => {
   const formInputs = ["email", "password", "username", "telefono"];
   return (
     <div className=" ">
-      <div className="redBox text-white text-6xl">
+      <div className="redBox text-white text-6xl pt-5">
         <Logo />
       </div>
 
@@ -25,6 +26,9 @@ export const RegisterForm = () => {
           />
         ))}
         <input type="submit" />
+        <Link to="/login" className="text-sm">
+          ya tengo una cuenta
+        </Link>
       </form>
     </div>
   );
