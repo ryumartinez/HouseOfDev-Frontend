@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import { usePropertyList, useSearchProperty } from "../hooks/property";
 import { useSearchParams } from "react-router-dom";
 import { SearchBar } from "../components/SearchBar";
@@ -28,7 +27,12 @@ export const AlquilerPage = () => {
           <div className="col-span-5 col-start-3 sm:col-start-2 border-t-2 border-solid border-blue-700 mt-8 sm:mt-4"></div>
         </div>
         <SearchBar />
-        <div className="h-72 col-span-2 bg-[url(https://i.imgur.com/l34Vcnd.png)]"></div>
+        <div className="h-72 col-span-2 overflow-hidden relative bg-gradient-to-r from-transparent to-blue-700">
+          <img
+            src="https://i.imgur.com/l34Vcnd.png"
+            className="mix-blend-overlay object-cover absolute h-full w-full"
+          />
+        </div>
 
         {query2?.data?.data?.map((property) => (
           <PropertyCard data={property} />

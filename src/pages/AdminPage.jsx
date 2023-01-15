@@ -7,6 +7,7 @@ export const AdminPage = () => {
   const navigate = useNavigate();
   const mutation = useDeleteProperty();
   const query = usePropertyList();
+
   return (
     <div>
       <div>

@@ -18,7 +18,7 @@ export const OnBoarding = () => {
           to="/register"
           className="hidden sm:inline text-md p-2 bg-white rounded-lg "
         >
-          Registrarme
+          Empezar ahora
         </Link>
       </div>
       <div className="row-start-6 row-span-1 bg-white md:hidden">

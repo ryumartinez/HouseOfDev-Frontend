@@ -12,7 +12,7 @@ function AdminLayout() {
           <Link to="/admin/users">Usuarios</Link>
           <Link to="/admin/">Propiedades</Link>
           <Link to="/admin/newProp">Nueva Propiedad</Link>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </div>
         <Outlet />
       </div>

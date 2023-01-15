@@ -22,7 +22,7 @@ function App() {
   return (
     <main>
       <Routes>
-        <Route index element={<OnBoarding />} forceRefresh={true} />
+        <Route index element={<OnBoarding />} />
         <Route path="/home/*" element={<Navbar />}>
           <Route index element={<HomePage />} />
           <Route path="details/:id" element={<DetailsPage />} />

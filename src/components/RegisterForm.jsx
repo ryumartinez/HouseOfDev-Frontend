@@ -26,9 +26,14 @@ export const RegisterForm = () => {
           />
         ))}
         <input type="submit" />
-        <Link to="/login" className="text-sm">
-          ya tengo una cuenta
-        </Link>
+        <div className="flex flex-col">
+          <Link to="/login" className="text-sm">
+            Ya tengo una cuenta
+          </Link>
+          <Link to="/home" className="text-sm">
+            Entrar como invitado
+          </Link>
+        </div>
       </form>
     </div>
   );

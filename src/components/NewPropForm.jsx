@@ -15,7 +15,6 @@ export const NewProp = () => {
     "area",
     "habitaciones",
     "direccion",
-    "categoria",
     "precio",
     "sanitarios",
   ];
@@ -34,6 +33,10 @@ export const NewProp = () => {
             placeholder={input}
           />
         ))}
+        <select {...register("categoria", { required: true })}>
+          <option value="ventas">ventas</option>
+          <option value="alquileres">alquileres</option>
+        </select>
         <input type="submit" />
       </form>
     </div>
