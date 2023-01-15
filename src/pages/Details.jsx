@@ -12,13 +12,17 @@ function DetailsPage() {
   const property = location.state;
   const { data } = useSession();
   const PropertyId = property.id;
-  const UserId = data.data.id;
+  const UserId = data?.data?.id;
   const mutation = useNewFavorite();
   return (
     <div>
       <div className="grid grid-cols-1  sm:grid-cols-3 grid-rows-4 px-10 gap-8 mt-10">
         <div className="sm:col-span-3 ">
-          <img src={property.imageUrl} alt="fasdf" className="h-72" />
+          <img
+            src={property.imageUrl}
+            alt="fasdf"
+            className="h-72 w-full object-contain"
+          />
         </div>
         <div className=" h-32 bg-red-200 text-4xl">Precio</div>
         <div className="h-32 bg-green-200 text-4xl ">Superficie</div>

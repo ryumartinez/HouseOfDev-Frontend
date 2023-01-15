@@ -6,8 +6,8 @@ export const UserDetails = () => {
   const user = location.state;
   return (
     <div>
-      <div className="mx-32 mt-16 border-2 border-solid shadow-md">
-        <div className="grid grid-cols-6 gap-10 gap-x-4">
+      <div className="md:mx-32 mt-16 border-2 border-solid shadow-md">
+        <div className="grid md:grid-cols-6 gap-10 gap-x-4">
           <div className="col-span-6 grid grid-cols-6 border-2 border-solid border-blue-700 ">
             <h1 className="font-bold text-blue-700 text-lg ">
               Perfil de usuario

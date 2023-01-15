@@ -22,8 +22,8 @@ const getSession = () => {
   });
 };
 
-export const useSession = (data) => {
-  return useQuery("session", getSession,{enabled:data});
+export const useSession = () => {
+  return useQuery("session", getSession);
 };
 
 export const useLogin = () => {

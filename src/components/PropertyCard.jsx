@@ -10,7 +10,7 @@ export const PropertyCard = ({ data }) => {
         className="border-2 sm:border-r-0 border-solid border-blue-700"
       >
         <div className="h-full col-span-1 bg-blue-200">
-          <img src={data.imageUrl} alt="" className="h-46" />
+          <img src={data.imageUrl} alt="" className="h-full" />
         </div>
       </NavLink>
 
@@ -27,7 +27,9 @@ export const PropertyCard = ({ data }) => {
           <div className="col-span-2">{data.sanitarios}</div>
         </div>
         <div className="col-span-3">{data.description}</div>
-        <div className="col-span-3 border-t-2 border-solid border-blue-700 "></div>
+        <div className="col-span-3 border-t-2 border-solid border-blue-700 ">
+          {data.name}
+        </div>
       </div>
     </div>
   );
