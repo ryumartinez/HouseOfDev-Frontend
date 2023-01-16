@@ -24,9 +24,19 @@ function DetailsPage() {
             className="h-72 w-full object-contain"
           />
         </div>
-        <div className=" h-32 bg-red-200 text-4xl">Precio</div>
-        <div className="h-32 bg-green-200 text-4xl ">Superficie</div>
-        <div className="h-32 bg-blue-200 text-4xl ">Ubicacion</div>
+        <div className=" h-32 bg-red-200 text-4xl">
+          <h3>Precio</h3>
+          <p>{property.precio}</p>
+        </div>
+        <div className="h-32 bg-green-200 text-4xl ">
+          <h3>Superficie</h3>
+          <p>{property.area}</p>
+        </div>
+        <div className="h-32 bg-blue-200 text-4xl ">
+          {" "}
+          <h3>Ubicacion</h3>
+          <p>{property.direccion}</p>
+        </div>
         <div className="sm:col-span-2 sm:row-span-2 col-start-1 h-32 border-2 border-solid border-blue-200">
           <h1 className="text-4xl">Descripcion</h1>
           <p>{property.description}</p>
