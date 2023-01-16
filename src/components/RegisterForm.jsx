@@ -32,7 +32,7 @@ export const RegisterForm = () => {
             Ya tengo una cuenta
           </Link>
           <Link to="/home" className="text-sm">
-            Entrar como invitado
+            Ir a Home directamente
           </Link>
         </div>
       </form>
