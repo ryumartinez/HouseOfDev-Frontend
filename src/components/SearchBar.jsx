@@ -22,11 +22,11 @@ export const SearchBar = () => {
           placeholder="searchbar"
           className="input"
         />
-        <select {...register("filtroPrecio", { required: true })}>
+        <select {...register("filtroPrecio")}>
           <option value="ASC">mayor precio</option>
           <option value="DESC">menor precio</option>
         </select>
-        <select {...register("filtroHabitaciones", { required: true })}>
+        <select {...register("filtroHabitaciones")}>
           <option value="ASC">mas habitaciones</option>
           <option value="DESC">menos habitaciones</option>
         </select>
