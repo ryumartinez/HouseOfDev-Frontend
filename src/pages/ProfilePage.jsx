@@ -52,17 +52,27 @@ export const ProfilePage = () => {
             <h2>Telefono</h2>
             {user?.telefono}
           </div>
-          <Link to="/home/favoritos">Favoritos</Link>
-          <div className="col-start-6">
-            <button
-              onClick={() => {
-                window.localStorage.clear();
-                navigate("/home");
-              }}
-            >
-              cerrar sesion
-            </button>
-            {user.role == "admin" ? <Link to="/admin">admin</Link> : <></>}
+
+          <div className="col-start-5">
+            <div className="flex gap-5">
+              {" "}
+              <Link to="/home/favoritos">Favoritos</Link>
+              <button
+                onClick={() => {
+                  window.localStorage.clear();
+                  navigate("/home");
+                }}
+              >
+                cerrar sesion
+              </button>
+              {user.role == "admin" ? (
+                <Link to="/admin" className="">
+                  admin
+                </Link>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </div>
       </div>

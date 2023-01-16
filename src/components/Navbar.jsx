@@ -12,8 +12,8 @@ export const Navbar = () => {
         <div className="">
           <CompactLogo />
         </div>
-        <div className="flex gap-5">
-          <Link to="/home">home</Link>
+        <div className="flex gap-5 text-white">
+          <Link to="/home">Home</Link>
           <Link to="/home/alquileres">En alquiler</Link>
           <Link to="/home/ventas">En venta</Link>
           <a href="http://localhost:5173/home/perfil">Mi perfil</a>
