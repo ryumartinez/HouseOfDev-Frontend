@@ -1,7 +1,12 @@
 import { useMutation, useQuery } from "react-query";
 import {useNavigate} from "react-router-dom"
-import { request } from "../utils/api/axios";
+import { request } from "../utils/api/axios"; //cliente de axios
 
+//#region logica de UseLogin abajo
+const saveOnLocal = (data) => {
+  return window.localStorage.setItem("token", JSON.stringify(data));
+  
+};
 const loginUser = (data) => {
   return request({
     url: "/auth",
@@ -9,23 +14,6 @@ const loginUser = (data) => {
     data: data,
   });
 };
-
-const saveOnLocal = (data) => {
-  return window.localStorage.setItem("token", JSON.stringify(data));
-  
-};
-
-const getSession = () => {
-  return request({
-    url: "/auth",
-    method: "get",
-  });
-};
-
-export const useSession = () => {
-  return useQuery("session", getSession);
-};
-
 export const useLogin = () => {
   const navigate = useNavigate()
   return useMutation({
@@ -36,3 +24,17 @@ export const useLogin = () => {
     }
   });
 };
+//#endregion
+
+//#region logica de UseSession abajo
+const getSession = () => {
+  return request({
+    url: "/auth",
+    method: "get",
+  });
+};
+
+export const useSession = () => {
+  return useQuery("session", getSession);
+};
+//#endregion

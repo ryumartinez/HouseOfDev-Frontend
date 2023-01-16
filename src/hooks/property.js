@@ -1,13 +1,20 @@
-import { QueryClient, useMutation, useQuery,useQueryClient } from "react-query";
-import { request } from "../utils/api/axios";
+import {useMutation, useQuery,useQueryClient } from "react-query";
+import { request } from "../utils/api/axios"; //cliente de axios
 import { useNavigate } from "react-router-dom";
+
+//#region logica de usePropertyList abajo
 const getAllProperties = () => {
   return request({
     url: "/properties",
     method: "get",
   });
 };
+export const usePropertyList = () => {
+  return useQuery("properties", getAllProperties,{keepPreviousData:true});
+};
+//#endregion
 
+//#region logica de useNewProperty abajo
 const newProp = (data) => {
   return request({
     url: "/properties",
@@ -15,7 +22,12 @@ const newProp = (data) => {
     data: data,
   });
 };
+export const useNewProperty = () => {
+  return useMutation({ mutationFn: newProp });
+};
+//#endregion
 
+//#region logica de useSearchProperty abajo
 const searchProperties = (search,precio,habitaciones) => {
 
   return request({
@@ -23,7 +35,13 @@ const searchProperties = (search,precio,habitaciones) => {
     method: "get",
   });
 };
+export const useSearchProperty = (search,precio,habitaciones) =>{
+  
+    return useQuery([search,precio,habitaciones],()=>searchProperties(search,precio,habitaciones),{keepPreviousData:true})
+}
+//#endregion
 
+//#region logica de useDeleteProperty abajo
 const deleteProperty =(data) =>{
   return request({
     url: `/properties/${data}`,
@@ -31,24 +49,12 @@ const deleteProperty =(data) =>{
   }
   )
 }
-
-
-
 export const useDeleteProperty = () =>{
   const client = useQueryClient()
   const navigate = useNavigate()
   return useMutation({mutationFn:deleteProperty})
 }
+//#endregion
 
-export const useSearchProperty = (search,precio,habitaciones) =>{
-  
-    return useQuery([search,precio,habitaciones],()=>searchProperties(search,precio,habitaciones),{keepPreviousData:true})
-}
 
-export const usePropertyList = () => {
-  return useQuery("properties", getAllProperties,{keepPreviousData:true});
-};
 
-export const useNewProperty = () => {
-  return useMutation({ mutationFn: newProp });
-};
