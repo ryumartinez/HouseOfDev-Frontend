@@ -1,10 +1,8 @@
 import React from "react";
 import { usePropertyList, useSearchProperty } from "../hooks/property";
 import { PropertyCard } from "../components/PropertyCard";
-import { useSession } from "../hooks/auth";
-import { useNavigate } from "react-router-dom";
+
 export const HomePage = () => {
-  const navigate = useNavigate();
   const query = usePropertyList();
   if (query.isLoading) {
     return <h1>loading...</h1>;

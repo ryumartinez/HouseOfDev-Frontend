@@ -1,11 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { useSession } from "../hooks/auth";
-import { useNavigate } from "react-router-dom";
 import CompactLogo from "../icons/CompactLogo";
 export const Navbar = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="">
       <nav className="navbar flex justify-around">

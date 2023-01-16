@@ -1,10 +1,9 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-
 import { usePropertyList, useSearchProperty } from "../hooks/property";
-
 import { SearchBar } from "../components/SearchBar";
 import { PropertyCard } from "../components/PropertyCard";
+
 export const VentaPage = () => {
   const [searchParams, setSearchParams] = useSearchParams({
     search: "venta",
