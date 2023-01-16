@@ -1,13 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-
-import { useNavigate } from "react-router-dom";
-
 import { useSession } from "../hooks/auth";
 import { useNewFavorite } from "../hooks/favorite";
 
 function DetailsPage() {
-  const navigate = useNavigate();
   const location = useLocation();
   const property = location.state;
   const { data } = useSession();

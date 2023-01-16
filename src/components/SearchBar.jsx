@@ -5,7 +5,6 @@ import { useSearchParams } from "react-router-dom";
 export const SearchBar = () => {
   const [searchParams, setSearchParams] = useSearchParams(" ");
   const { register, handleSubmit } = useForm();
-  const search = searchParams.get("search");
   const onSubmit = (data) => {
     return setSearchParams({
       search: data.search,

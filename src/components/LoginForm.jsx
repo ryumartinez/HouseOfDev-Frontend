@@ -7,7 +7,6 @@ export const LoginForm = () => {
   const mutation = useLogin();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => mutation.mutate(data);
-  const navigate = useNavigate();
   const formInputs = ["username", "password"];
 
   return (
@@ -15,7 +14,6 @@ export const LoginForm = () => {
       <div className="redBox text-white text-6xl pt-5">
         <Logo />
       </div>
-
       <form onSubmit={handleSubmit(onSubmit)} className="formLayout">
         {formInputs.map((input) => (
           <input

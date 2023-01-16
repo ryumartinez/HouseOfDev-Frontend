@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useRegisterUser } from "../hooks/user";
 import Logo from "../icons/Logo";
 import { Link } from "react-router-dom";
+
 export const RegisterForm = () => {
   const mutation = useRegisterUser();
   const { register, handleSubmit } = useForm();

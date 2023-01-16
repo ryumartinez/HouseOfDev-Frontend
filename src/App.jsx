@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { NewProp } from "./components/NewPropForm";
 import RegisterPage from "./pages/Register";
-
 import { AlquilerPage } from "./pages/AlquilerPage";
 import DetailsPage from "./pages/Details";
 import { VentaPage } from "./pages/VentaPage";
@@ -11,7 +10,6 @@ import { AdminPage } from "./pages/AdminPage";
 import { HomePage } from "./pages/Home";
 import { Navbar } from "./components/Navbar";
 import { FavoritosPage } from "./pages/FavoritosPage";
-
 import { ProfilePage } from "./pages/ProfilePage";
 import { OnBoarding } from "./pages/OnBoarding";
 import { LoginPage } from "./pages/LoginPage";
