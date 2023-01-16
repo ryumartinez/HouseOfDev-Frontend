@@ -2,12 +2,24 @@ import { useMutation,useQuery,useQueryClient } from "react-query";
 import { request } from "../utils/api/axios";
 import { useNavigate } from "react-router-dom";
 
+//#region logica de useRegisterUser abajo
 const registerUser = (data) =>{return request({
     url:"/users",
     method:"post",
     data:data
 })}
+export const useRegisterUser = () =>{
+    const navigate = useNavigate()
+    return useMutation({
+        mutationFn:registerUser,
+        onSuccess: ()=>{
+            navigate("/login")
+        }
+    })
+}
+//#endregion
 
+//#region logica de useUserList abajo
 const getAllUsers = () =>{
     return request({
         url:"/users",
@@ -18,16 +30,9 @@ const getAllUsers = () =>{
 export const useUserList = () =>{
     return useQuery("users",getAllUsers)
 }
+//#endregion
 
-export const useRegisterUser = () =>{
-    const navigate = useNavigate()
-    return useMutation({
-        mutationFn:registerUser,
-        onSuccess: ()=>{
-            navigate("/login")
-        }
-    })
-}
+//#region logica de deleteUser abajo
 const deleteUser =(data) =>{
     return request({
       url: "/users",
@@ -45,3 +50,4 @@ const deleteUser =(data) =>{
       }
     })
   }
+//#endregion
