@@ -16,7 +16,9 @@ export const AlquilerPage = () => {
   const habitaciones = searchParams.get("habitaciones");
 
   const query2 = useSearchProperty(search, precio, habitaciones);
-
+  if (query2.isLoading) {
+    return <h1>loading...</h1>;
+  }
   return (
     <div>
       <div className="grid grid-cols-2 px-10 gap-5 mt-5">

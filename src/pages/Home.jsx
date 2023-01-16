@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 export const HomePage = () => {
   const navigate = useNavigate();
   const query = usePropertyList();
-
+  if (query.isLoading) {
+    return <h1>loading...</h1>;
+  }
   return (
     <div>
       <div className="grid grid-cols-2 px-10 gap-5 mt-5">

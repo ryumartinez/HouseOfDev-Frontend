@@ -42,11 +42,11 @@ export const useDeleteProperty = () =>{
 
 export const useSearchProperty = (search,precio,habitaciones) =>{
   
-    return useQuery([search,precio,habitaciones],()=>searchProperties(search,precio,habitaciones))
+    return useQuery([search,precio,habitaciones],()=>searchProperties(search,precio,habitaciones),{keepPreviousData:true})
 }
 
 export const usePropertyList = () => {
-  return useQuery("properties", getAllProperties);
+  return useQuery("properties", getAllProperties,{keepPreviousData:true});
 };
 
 export const useNewProperty = () => {
