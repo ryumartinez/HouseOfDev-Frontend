@@ -7,6 +7,7 @@ function AdminLayout() {
   const role = session?.data?.role;
   return (
     <>
+      {role != "admin" ? <Navigate to="/home" /> : <></>}
       <div>
         <div className="flex gap-5 bg-blue-400 navbar">
           <Link to="/admin/users">Usuarios</Link>
