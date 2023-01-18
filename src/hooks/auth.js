@@ -15,12 +15,12 @@ const loginUser = (data) => {
   });
 };
 export const useLogin = () => {
-  const navigate = useNavigate()
+  
   return useMutation({
     mutationFn: loginUser,
     onSuccess: (data) => {
       saveOnLocal(data);
-      navigate("/home")
+     window.location.replace("http://localhost:5173/home")
     }
   });
 };

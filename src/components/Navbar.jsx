@@ -12,7 +12,7 @@ export const Navbar = () => {
           <Link to="/home">Home</Link>
           <Link to="/home/alquileres">En alquiler</Link>
           <Link to="/home/ventas">En venta</Link>
-          <a href="http://localhost:5173/home/perfil">Mi perfil</a>
+          <Link to="/home/perfil">Mi perfil</Link>
         </div>
       </nav>
 

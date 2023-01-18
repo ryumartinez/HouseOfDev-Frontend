@@ -6,9 +6,7 @@ export const ProfilePage = () => {
   const navigate = useNavigate();
   const session = useSession();
   const user = session?.data?.data;
-  if (session.isLoading) {
-    return <h1>loading</h1>;
-  }
+
   if (!user) {
     return (
       <div>
@@ -55,12 +53,11 @@ export const ProfilePage = () => {
 
           <div className="col-start-5">
             <div className="flex gap-5">
-              {" "}
               <Link to="/home/favoritos">Favoritos</Link>
               <button
                 onClick={() => {
                   window.localStorage.clear();
-                  navigate("/home");
+                  window.location.replace("http://localhost:5173/home");
                 }}
               >
                 cerrar sesion

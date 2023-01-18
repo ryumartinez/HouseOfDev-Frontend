@@ -1,12 +1,10 @@
 import React from "react";
 import { usePropertyList, useSearchProperty } from "../hooks/property";
 import { PropertyCard } from "../components/PropertyCard";
-
+import { useSession } from "../hooks/auth";
 export const HomePage = () => {
   const query = usePropertyList();
-  if (query.isLoading) {
-    return <h1>loading...</h1>;
-  }
+  const { data } = useSession();
   return (
     <div>
       <div className="grid grid-cols-2 px-10 gap-5 mt-5">
