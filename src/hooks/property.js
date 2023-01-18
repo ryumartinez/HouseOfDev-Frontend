@@ -51,8 +51,8 @@ const deleteProperty =(data) =>{
 }
 export const useDeleteProperty = () =>{
   const client = useQueryClient()
-  const navigate = useNavigate()
-  return useMutation({mutationFn:deleteProperty})
+
+  return useMutation({mutationFn:deleteProperty},{onSuccess:client.invalidateQueries("properties")})
 }
 //#endregion
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useMutation,useQuery } from "react-query"; 
 import { request } from "../utils/api/axios"; //cliente de axios
-
+import { useQueryClient } from "react-query";
 //#region logica de useNewFavorite abajo
 const newFavorite = (data) =>{
     return request({
@@ -24,7 +24,7 @@ const getFavorite = (UserId) =>{
 }
 
 export const useFavorites = (UserId) =>{
-    return useQuery([UserId],()=>getFavorite(UserId))
+    return useQuery("favorites",()=>getFavorite(UserId))
 }
 //#endregion
 
@@ -36,6 +36,7 @@ const deleteFavorite = (data) =>{
     })
 }
 export const useDeleteFavorite = () =>{
-    return useMutation({mutationFn:deleteFavorite})
+    const client = useQueryClient()
+    return useMutation({mutationFn:deleteFavorite,onSuccess:client.invalidateQueries("favorites")})
 }
 //#endregion

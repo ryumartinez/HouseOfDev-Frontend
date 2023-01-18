@@ -23,7 +23,6 @@ export const AdminPage = () => {
               <button
                 onClick={() => {
                   mutation.mutate(property.id);
-                  navigate(0);
                 }}
               >
                 eliminar
