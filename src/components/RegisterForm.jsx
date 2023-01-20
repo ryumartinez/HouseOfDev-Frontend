@@ -17,6 +17,7 @@ export const RegisterForm = () => {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="formLayout">
+        <h4>Registrarme</h4>
         {formInputs.map((input) => (
           <input
             key={input}
@@ -26,6 +27,7 @@ export const RegisterForm = () => {
             placeholder={input}
           />
         ))}
+
         <input type="submit" />
         <div className="flex flex-col">
           <Link to="/login" className="text-sm">

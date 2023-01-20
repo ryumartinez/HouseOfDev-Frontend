@@ -17,6 +17,7 @@ export const LoginForm = () => {
         <Logo />
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="formLayout">
+        <h4>Iniciar Sesion</h4>
         {formInputs.map((input) => (
           <input
             key={input}
