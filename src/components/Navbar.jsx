@@ -12,14 +12,13 @@ export const Navbar = () => {
           <Link to="/home">Home</Link>
           <Link to="/home/alquileres">En alquiler</Link>
           <Link to="/home/ventas">En venta</Link>
-          <Link
-            to="/home/perfil"
+          <a
             onClick={() => {
               window.location.href = "#/home/perfil";
             }}
           >
             Mi perfil
-          </Link>
+          </a>
         </div>
       </nav>
 
