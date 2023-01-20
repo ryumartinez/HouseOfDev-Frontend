@@ -20,7 +20,7 @@ export const useLogin = () => {
     mutationFn: loginUser,
     onSuccess: (data) => {
       saveOnLocal(data);
-     window.location.replace("https://houseofdev.netlify.app/#/home")
+      window.location.href = "/#/home";
     }
   });
 };

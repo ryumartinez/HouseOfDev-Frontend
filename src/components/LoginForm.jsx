@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 export const LoginForm = () => {
   const mutation = useLogin();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => mutation.mutate(data);
+  const onSubmit = (data) => {
+    mutation.mutate(data);
+  };
   const formInputs = ["username", "password"];
 
   return (
