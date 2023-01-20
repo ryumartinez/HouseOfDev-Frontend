@@ -21,7 +21,8 @@ export const ProfilePage = () => {
         </div>
       </div>
     );
-  } else
+  }
+  if (user)
     return (
       <div className="md:mx-32 mt-16 border-2 border-solid shadow-md">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-10 gap-x-4">
