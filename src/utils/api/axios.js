@@ -1,5 +1,5 @@
 import axios from "axios";
-const client = axios.create({ baseURL: "http://localhost:3500" });
+const client = axios.create({ baseURL: "https://houseofdevback.onrender.com" });
 
 const tokenJSON = window.localStorage.getItem("token");
 
