@@ -57,7 +57,9 @@ export const ProfilePage = () => {
               <button
                 onClick={() => {
                   window.localStorage.clear();
-                  window.location.replace("http://localhost:5173/home");
+                  window.location.replace(
+                    "https://houseofdev.netlify.app/#/home"
+                  );
                 }}
               >
                 cerrar sesion
