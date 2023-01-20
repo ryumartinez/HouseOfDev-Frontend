@@ -9,7 +9,14 @@ export const RegisterForm = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => mutation.mutate(data);
 
-  const formInputs = ["email", "password", "username", "telefono"];
+  const formInputs = [
+    "email",
+    "password",
+    "username",
+    "telefono",
+    "role",
+    "imageUrl",
+  ];
   return (
     <div className=" ">
       <div className="redBox text-white text-6xl pt-5">
