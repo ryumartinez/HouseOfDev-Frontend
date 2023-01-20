@@ -20,7 +20,7 @@ export const useLogin = () => {
     mutationFn: loginUser,
     onSuccess: (data) => {
       saveOnLocal(data);
-      window.location.href = "/#/home";
+      window.location.reload();
     }
   });
 };

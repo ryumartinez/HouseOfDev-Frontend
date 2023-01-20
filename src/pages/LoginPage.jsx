@@ -1,7 +1,13 @@
 import React from "react";
 import { LoginForm } from "../components/LoginForm";
-
+import { useSession } from "../hooks/auth";
+import { useNavigate } from "react-router-dom";
 export const LoginPage = () => {
+  const navigate = useNavigate();
+  const { data } = useSession();
+  if (data) {
+    navigate("/home");
+  }
   return (
     <div>
       <div className="bg-red-600 sm:bg-[url(https://i.imgur.com/GWlrTLR.png)] sm:bg-right-top md:bg-no-repeat h-screen">
