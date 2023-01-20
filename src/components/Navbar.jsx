@@ -12,7 +12,9 @@ export const Navbar = () => {
           <Link to="/home">Home</Link>
           <Link to="/home/alquileres">En alquiler</Link>
           <Link to="/home/ventas">En venta</Link>
-          <a href="https://houseofdev.netlify.app/#/home/perfil">Mi perfil</a>
+          <Link to="/home/perfil" onClick={this.forceUpdate}>
+            Mi perfil
+          </Link>
         </div>
       </nav>
 
