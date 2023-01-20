@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const ProfilePage = () => {
   const navigate = useNavigate();
   const session = useSession();
-  const user = session?.data?.data;
+  const user = session.data?.data;
 
   if (!user) {
     return (
@@ -58,9 +58,7 @@ export const ProfilePage = () => {
               <button
                 onClick={() => {
                   window.localStorage.clear();
-                  window.location.replace(
-                    "https://houseofdev.netlify.app/#/home"
-                  );
+                  window.location.reload();
                 }}
               >
                 cerrar sesion
