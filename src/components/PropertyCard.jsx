@@ -14,7 +14,7 @@ export const PropertyCard = ({ data }) => {
         </div>
       </NavLink>
 
-      <div className="hidden sm:col-span-2 sm:grid sm:grid-cols-3 sm:grid-rows-4 border-2 border-solid border-blue-700 justify-items-center">
+      <div className="hidden sm:col-span-2 sm:grid sm:grid-cols-3 sm:grid-rows-4 border-2 border-solid border-blue-700 ">
         <div className="col-span-1">{data.precio}</div>
         <div className="col-span-2 border-l-2 border-solid border-blue-700 ">
           {data.direccion}
