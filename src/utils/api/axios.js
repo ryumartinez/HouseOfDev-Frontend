@@ -1,5 +1,5 @@
 import axios from "axios";
-const client = axios.create({ baseURL: "https://houseofdevback.onrender.com" });
+const client = axios.create({ baseURL: "https://beautiful-longma-98810e.netlify.app" });
 
 const tokenJSON = window.localStorage.getItem("token");
 
