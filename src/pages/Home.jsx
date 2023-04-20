@@ -21,6 +21,7 @@ export const HomePage = () => {
             className="mix-blend-overlay object-cover absolute h-full w-full"
           />
         </div>
+        {query.isLoading ? <p>cargando...</p> : <></>}
         {query?.data?.data?.map((property) => (
           <PropertyCard data={property} />
         ))}
