@@ -15,19 +15,19 @@ export const PropertyCard = ({ data }) => {
       </NavLink>
 
       <div className="hidden sm:col-span-2 sm:grid sm:grid-cols-3 sm:grid-rows-4 border-2 border-solid border-blue-700 ">
-        <div className="col-span-1 text-center">{data.precio}</div>
-        <div className="col-span-2 border-l-2 border-solid border-blue-700 text-center">
+        <div className="col-span-1 text-center pt-2">{data.precio}</div>
+        <div className="col-span-2 border-l-2 border-solid border-blue-700 text-center pt-2">
           {data.direccion}
         </div>
         <div className="col-span-3 grid grid-cols-7 border-y-2 border-solid border-blue-700 text-center">
-          <div className="col-span-2 text-center">{data.area}</div>
-          <div className="col-span-3 border-x-2 border-solid border-blue-700 text-center ">
+          <div className="col-span-2 text-center pt-2">{data.area}</div>
+          <div className="col-span-3 border-x-2 border-solid border-blue-700 text-center pt-2">
             {data.habitaciones}
           </div>
-          <div className="col-span-2 text-center">{data.sanitarios}</div>
+          <div className="col-span-2 text-center pt-2">{data.sanitarios}</div>
         </div>
-        <div className="col-span-3 text-center">{data.description}</div>
-        <div className="col-span-3 border-t-2 border-solid border-blue-700 text-center">
+        <div className="col-span-3 text-center pt-2">{data.description}</div>
+        <div className="col-span-3 border-t-2 border-solid border-blue-700 text-center pt-2">
           {data.name}
         </div>
       </div>
